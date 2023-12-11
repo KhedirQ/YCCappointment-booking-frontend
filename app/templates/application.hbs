@@ -1,7 +1,11 @@
-{{page-title "AppointmentBookingFrontend"}}
+<!-- app/templates/application.hbs -->
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<div style="text-align: center; padding-top: 20px;">
+  <img src="/YCC logo.png" alt="YCC Logo" style="width: 150px; height: auto;">
+</div>
+
+<h1 style="text-align: center;">Welcome to YCC Appointments</h1>
 
 {{outlet}}
+<LinkTo @route="appointments">Appointments</LinkTo>
+

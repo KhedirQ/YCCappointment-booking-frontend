@@ -1,0 +1,7 @@
+<!-- app/templates/appointments.hbs -->
+
+<h2>Appointments</h2>
+{{@model}}
+{{#each @model as |appointment|}}
+  <p>{{appointment.date}} at {{appointment.time}}</p>
+{{/each}}

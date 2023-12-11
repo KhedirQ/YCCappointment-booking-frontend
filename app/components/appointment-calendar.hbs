@@ -1,0 +1,39 @@
+import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+
+export default class AppointmentCalendarComponent extends Component {
+  @service appointment;
+
+  @action
+  async fetchAppointments() {
+    try {
+      const availableAppointments = await this.appointment.getAppointments();
+      console.log('Fetched Appointments in Component:', availableAppointments);
+
+      // Use the data in the component as needed
+    } catch (error) {
+      console.error('Error fetching appointments in Component:', error);
+      // Handle the error in the component
+    }
+  }
+
+  @action
+  async bookNewAppointment() {
+    try {
+      const newAppointmentData = {
+        date: '2023-12-01',
+        time: '02:30 PM',
+        // Add other fields as needed
+      };
+
+      const bookedAppointment = await this.appointment.bookAppointment(newAppointmentData);
+      console.log('Booked Appointment in Component:', bookedAppointment);
+
+      // Use the data in the component as needed
+    } catch (error) {
+      console.error('Error booking appointment in Component:', error);
+      // Handle the error in the component
+    }
+  }
+}

@@ -1,3 +1,5 @@
+// app/router.js
+
 import EmberRouter from '@ember/routing/router';
 import config from 'appointment-booking-frontend/config/environment';
 
@@ -6,4 +8,8 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function () {});
+Router.map(function () {
+  this.route('appointments');
+  // ... other routes if needed
+});
+// app/templates/appointments.hbs
