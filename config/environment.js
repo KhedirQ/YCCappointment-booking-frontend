@@ -1,6 +1,22 @@
 'use strict';
 
 module.exports = function (environment) {
+  // config/environment.js
+
+  module.exports = function (environment) {
+    let ENV = {
+      // ...
+      'ember-simple-auth': {
+        authenticationRoute: 'login', // Route to redirect unauthenticated users
+        routeAfterAuthentication: 'dashboard', // Route to redirect after login
+        routeIfAlreadyAuthenticated: 'dashboard', // Route to redirect if already authenticated
+      },
+      // ...
+    };
+
+    return ENV;
+  };
+
   const ENV = {
     modulePrefix: 'appointment-booking-frontend',
     environment,
